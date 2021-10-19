@@ -1,6 +1,6 @@
 # Game Examples
 
-The 3 examples in this folder show how the Javascript files have been altered to create the games. All games have one button functionality, infinate play and a timer.
+The three examples in this folder show how the Javascript files have been altered to create the games. All games have one button functionality, infinite play, and a timer.
 
 ## High Riser
 * **Aim:** the player constantly moving from left to right. Clicking on the button makes the player jump on the next floor where there are no walls or 1 wall or both walls.
