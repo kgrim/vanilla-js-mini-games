@@ -1,14 +1,3 @@
-/*
-  ! READ ONLY !
-  Every diesdas project should have the same reset styles, so that all
-  projects start from the same foundation. Therefore this file should not
-  be changed. Additionaly no other reset, base or general styles should be
-  added in a different file. Only normalize.css should be loaded on every
-  project in addition to this file.
-  If you are missing important reset styles, create a pull request in our
-  minimal-template repository. Thank you!
-*/
-
 *,
 *::before,
 *::after {
