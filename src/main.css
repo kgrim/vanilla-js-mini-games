@@ -1,0 +1,7 @@
+/* reset styles */
+@import "./vendor/normalize-8.0.1.css";
+@import "./reset.css";
+@import "./mini-game-reset.css";
+
+/* components */
+@import "./components/mini-game.css";

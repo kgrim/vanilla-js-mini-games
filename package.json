@@ -1,0 +1,32 @@
+{
+  "name": "game-template",
+  "version": "1.0.0",
+  "description": "enter description here",
+  "main": "src/main.js",
+  "author": "",
+  "license": "none",
+  "private": true,
+  "scripts": {
+    "pre-push": "yarn -s lint",
+    "post-merge": "yarn",
+    "dev": "echo && echo '👷 starting development…' && parcel src/index.html --port 3000 -d compiled",
+    "dev:pcms": "echo && http-server src --cors --port 3000",
+    "build": "echo && echo '🔨 building…' && rm -rf compiled && parcel build src/index.html -d compiled --public-url ./",
+    "start": "echo && echo '🚀 starting server…' && php -S 0.0.0.0:3000 -t compiled",
+    "lint": "yarn run -s lint:formatting && yarn run -s lint:css && yarn run -s lint:js && echo",
+    "lint:formatting": "echo '\n💅 linting formatting: ' && (prettier . --check && echo '✅ all good' || (echo '❌ the files above are not formatted by prettier\n' && exit 1))",
+    "lint:css": "echo '\n🎨 linting CSS: ' && stylelint 'src/**/*.css' && csslint 'src/**/*.css' --all && echo '✅ all good'",
+    "lint:js": "echo '\n⚙️ linting JS: ' && eslint . && echo '✅ all good'"
+  },
+  "devDependencies": {
+    "captain-git-hook": "^2.0.0",
+    "eslint": "*",
+    "http-server": "^0.12.1",
+    "prettier": "^2.0.5",
+    "stylelint": "*"
+  },
+  "dependencies": {
+    "@diesdasdigital/js-canvas-library": "^2.0.0",
+    "parcel-bundler": "^1.12.4"
+  }
+}

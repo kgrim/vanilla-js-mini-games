@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Template</title>
+    <link href="main.css" rel="stylesheet" />
+    <script src="main.js" defer></script>
+  </head>
+
+  <body>
+    <main class="mini-game" id="mini-game">
+      <div class="mini-game__power-bar-container">
+        <progress class="mini-game__power-bar" max="100" value="100"></progress>
+      </div>
+      <button class="mini-game__button">send message to game</button>
+      <button class="mini-game__reset-button">
+        Reset
+      </button>
+    </main>
+  </body>
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const GAME_IDENTIFIER = "example";
+      const ASSETS_URL = "";
+      const options = {
+        copy: "copy",
+        assets: {}, // this to be filled with the assets once available
+      };
+
+      window.miniGames[GAME_IDENTIFIER](
+        document.querySelector(".mini-game"),
+        options,
+        {
+          onGameOver() {
+            console.log("game over"); // eslint-disable-line
+          },
+        }
+      )
+        .then((gameInstance) => {
+          document
+            .querySelector(".mini-game__button")
+            .addEventListener("mousedown", gameInstance.playerButtonDown);
+          document
+            .querySelector(".mini-game__button")
+            .addEventListener("mouseup", gameInstance.playerButtonUp);
+          document
+            .querySelector(".mini-game__button")
+            .addEventListener("touchstart", gameInstance.playerButtonDown);
+          document
+            .querySelector(".mini-game__button")
+            .addEventListener("touchend", gameInstance.playerButtonUp);
+          document
+            .querySelector(".mini-game__reset-button")
+            .addEventListener("click", gameInstance.resetGame);
+        })
+        .catch(console.error); // eslint-disable-line
+    });
+  </script>
+
+</html>
